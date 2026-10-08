@@ -6,8 +6,8 @@ A machine learning API that predicts passenger survival on the Titanic using a R
 
 ### Run the API locally
 
-docker pull yourusername/titanic-survival-api:latest
-docker run -p 8000:8000 yourusername/titanic-survival-api:latest
+docker build -t titanic-survival-api ./serving
+docker run -p 8000:8000 titanic-survival-api
 
 
 ### Use the API
@@ -50,7 +50,7 @@ curl -X POST "http://localhost:8000/predict" \
 ## Model Performance
 
 - Algorithm: Random Forest Classifier
-- Accuracy: 85%+ on test data
+- Accuracy: about 82% on the test set
 - Features: Passenger class, sex, age, family size, fare, embarkation port
 
 ## API Endpoints
